@@ -1,0 +1,377 @@
+/* Standrad */
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+
+:root {
+    --primary-color: #c0ac84;
+    --secondary-color: #424a53;
+    --hover-color: #a38f61;
+    --error-color: #E74C3C;
+}
+
+.MainWrapper {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Images/bg-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+
+
+/* Navbar */
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
+    background-color: rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+    letter-spacing: 1.4px;
+}
+
+.NavLeft {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .NavLeft {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .NavLeft .NavItems {
+        display: none;
+    }
+
+    .NavRight {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .LogoHamburger {
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        width: 100%;
+    }
+}
+
+    .HamburgerIcon {
+        display: none;
+        width: 25px;
+        height: 25px;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+        .HamburgerIcon svg {
+            color: var(--primary-color);
+        }
+
+    @media (max-width: 1000px) {
+        .HamburgerIcon {
+            display: block;
+        }
+    }
+
+
+    .NavLeft a {
+        color: var(--primary-color);
+    }
+
+    .logo {
+        height: 40px;
+        margin-right: 20px;
+    }
+
+    .NavItems {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+        .NavItems li {
+            margin-right: 40px;
+        }
+
+        .NavItems a,
+        .NavRight button {
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+            .NavItems a::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: var(--primary-color);
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform 0.3s ease;
+            }
+
+            .NavItems a:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
+    .NavRight button {
+        margin-left: 20px;
+        color: black;
+        border: 1px solid var(--primary-color);
+        background-color: var(--primary-color);
+        border-radius: 30px;
+        padding: 4px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+        .NavRight button:hover {
+            background-color: var(--hover-color)
+        }
+
+    #loginBtn {
+        cursor: pointer;
+    }
+
+    #loginBtn, #welcomeMessage {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+
+    .UserName {
+        color: white;
+        font-size: 10px;
+    }
+
+
+    /* SiderBar */
+
+
+@media (min-width: 1000px) {
+    .Sidebar {
+        display: none;
+    }
+}
+
+
+.Sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--secondary-color);
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    padding: 60px 20px;
+}
+
+    .Sidebar button {
+        color: black;
+        border: 1px solid var(--primary-color);
+        background-color: var(--primary-color);
+        border-radius: 30px;
+        padding: 4px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .Sidebar.active {
+        right: 0;
+    }
+
+.SidebarMenu {
+    list-style: none;
+    padding: 0;
+}
+
+    .SidebarMenu li {
+        margin-bottom: 20px;
+    }
+
+    .SidebarMenu a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+.SideBarAuth {
+    display: grid;
+    gap: 10px;
+    width: 80%;
+}
+
+
+
+
+/* Hero Text */
+.HeroText {
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 88vh;
+    margin: 0 auto;
+    max-width: 550px;
+    text-align: center;
+}
+
+    .HeroSmallText {
+        font-size: 13px;
+        letter-spacing: 1.3px;
+    }
+
+    .HeroBigText {
+        font-size: 40px;
+        font-family: "Playfair Display", serif;
+        padding-top: 10px;
+    }
+
+    .HeroSmallText,
+    .HeroBigText {
+        margin: 0;
+    }
+
+
+
+    /* Modal */
+
+
+    .Modal {
+        display: none;
+        position: fixed;
+        z-index: 1050;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+    .ModalContent {
+        background-color: #fff;
+        padding: 40px;
+        width: 23%;
+        max-width: 400px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        margin: 20px;
+    }
+
+@media (max-width: 900px) {
+    .ModalContent {
+        width: 100%;
+    }
+}
+
+    .CloseModal {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+
+        .CloseModal:hover,
+        .CloseModal:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+    .ModalContent h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .ModalContent p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    #loginForm {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+        #loginForm input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #loginForm button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            #loginForm button:hover {
+                background-color: var(--hover-color);
+            }
+
+    .ModalContent p span {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .ModalContent p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .ModalTerms {
+        text-align: center;
+    }
+
+    .ErrorText {
+        color: var(--error-color);
+    }
+
+    body.ModalOpen .ContentWrapper {
+        filter: blur(3px);
+        pointer-events: none;
+    }
+
+

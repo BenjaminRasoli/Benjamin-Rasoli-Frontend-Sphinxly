@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Alpha</title>
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <div class="ContentWrapper">
+
+    <div class="MainWrapper">
+
+    <!-- Navbar -->
+    <nav class="Navbar">
+        <div class="NavLeft">
+            <div class="LogoHamburger">
+            <img src="~/Images/test-logga.svg" alt="Logo" class="logo" />
+            <img class="HamburgerIcon" id="hamburgerIcon" src="./Images/hamburger-icon.png" alt="Hambruger icon" />
+            </div>
+            <ul class="NavItems">
+                <li><a href="#">PRODUKTER</a></li>
+                <li><a href="#">OM OSS</a></li>
+                <li><a href="#">BESTÄLNING</a></li>
+            </ul>
+        </div>
+        <div class="NavRight">
+            <span class="UserName" id="userNameNav"></span>
+            <button id="loginBtn">LOGGA IN</button>
+        </div>
+    </nav>
+
+            <!-- SideBar -->
+
+            <div id="Sidebar" class="Sidebar">
+                <ul class="SidebarMenu">
+                    <li><a href="#">PRODUKTER</a></li>
+                    <li><a href="#">OM OSS</a></li>
+                    <li><a href="#">BESTÄLNING</a></li>
+                </ul>
+                <div class="SideBarAuth">
+                <button id="loginBtnSidebar">LOGGA IN</button>
+                <span class="UserName" id="userNameSideBar"></span>
+                </div>
+            </div>
+
+
+     <!-- HeroText -->
+
+        <div class="HeroText">
+            <p class="HeroSmallText">ETT NYTT SÄTT ATT UPPTÄCKA</p>
+            <h1 class="HeroBigText">Silkeslena produkter med glansiga detaljer</h1>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="loginModal" class="Modal">
+        <div class="ModalContent">
+            <span class="CloseModal"><img src="./Images/close-symbol.svg" alt="x-logo" /></span>
+
+           
+            <h2>Logga in</h2>
+            <p>Använd ditt namn för att logga in</p>
+            <form id="loginForm">
+                <input type="text"
+                       id="userName"
+                       name="userName"
+                       placeholder="Namn"
+                       required />
+                       <span class="ErrorText" id="errorText"></span>
+                <button id="saveNameBtn" type="submit">Logga in</button>
+            </form>
+            <p class="ModalTerms">Genom att logga in godkänner du <span>våra vilkor</span></p>
+        </div>
+    </div>
+
+
+
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
+
+    <script src="/js/site.js"></script>
+</body>
+</html>
