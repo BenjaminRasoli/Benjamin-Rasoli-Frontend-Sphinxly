@@ -27,5 +27,5 @@ Projektet är byggt med:
 ---
 
 🟢 Publicerad på Azure:  
-[https://benjamin-rasoli-frontend-sphinxly.azurewebsites.net](https://benjamin-rasoli-frontend-sphinxly.azurewebsites.net)
+[https://benjamin-rasoli-frontend-sphinxly-f5adf2dabygpfras.swedencentral-01.azurewebsites.net/](https://benjamin-rasoli-frontend-sphinxly-f5adf2dabygpfras.swedencentral-01.azurewebsites.net/)
 
